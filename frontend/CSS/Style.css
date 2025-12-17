@@ -5,25 +5,39 @@
     list-style: none;
 }
 
+body {
+    margin: 0;
+}
+
 a{
     text-decoration: none !important;
+}
+
+.bgpicture {
+    position: relative;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../pictures/picture/background1.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    position: relative;
+    color: white;
+}
+
+header * {
+    position: relative;
+    z-index: 2;
 }
 
 header .bannerImage img{
     width: 100%;
     height: 22rem;
     min-height: 22rem;
-    object-fit: cover;
-}
-
-header .bannerImage img:hover {
-     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-
-.picture {
-    width: 100%;
-    height: 350px;
     object-fit: cover;
     display: block;
 }
@@ -36,19 +50,17 @@ header .bannerImage img:hover {
 .hero-text h2 {
     font-size: 2rem;
     margin-bottom: 10px;
-    font-weight:700;
-    text-shadow: 1px 1px 5px
-  rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
 }
 
 .hero-text p {
     font-size: 1.1rem;
-    color: #555;
+    color: #e0e0e0;
 }
 
-
 header nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
     gap: 25px;
@@ -57,21 +69,24 @@ header nav ul {
 }
 
 header nav a {
-    color: #555;
+    color: #f0f0f0;
     font-weight: 500;
     padding: 8px 15px;
     border-radius: 8px;
-    transition: background 0.5s, color 0.5s;
+    transition: background 0.3s, color 0.3s;
 }
 
 header nav a:hover {
-    background-color: #ccc;
-    color: #222;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
 }
 
+main {
+    padding-bottom: 40px;
+}
 
 main section {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.96);
     max-width: 1000px;
     margin: 30px auto;
     padding: 30px;
@@ -92,8 +107,8 @@ main section p {
     text-align: center;
 }
 
+/* Grid */
 main section ul {
-    list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -120,3 +135,10 @@ main section ul h4 {
     color:#222;
 }
 
+footer {
+    margin-top: 0 !important;
+}
+
+body {
+  padding-top: 69px;
+}
