@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ClassPlanner – Kalender</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- FullCalendar -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css">
+
+  <style>
+    body {
+      background-color: #f4f6f9;
+    }
+
+    #calendar {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="../HTML/index.html">
+    <img src="../pictures/Icons/HTLIcon.png" height="30" alt="HTL Leonding">
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="../HTML/index.html">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="../HTML/kalender.html">Kalendar</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- FORMULAR -->
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">➕ Test hinzufügen</h4>
+
+      <form id="testForm" class="form-row">
+        <div class="form-group col-md-3">
+          <label>Fach</label>
+          <select id="fach" class="form-control" required>
+            <option value="">Bitte wählen</option>
+            <option>Deutsch</option>
+            <option>Mathematik</option>
+            <option>Englisch</option>
+            <option>Programmieren</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label>Datum</label>
+          <input type="date" id="datum" class="form-control" required>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label>Uhrzeit</label>
+          <input type="time" id="zeit" class="form-control">
+        </div>
+
+        <div class="form-group col-md-3 d-flex align-items-end">
+          <button type="submit" class="btn btn-success w-100">
+            Test hinzufügen
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- KALENDER -->
+<div id="calendar"></div>
+
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  const fachFarben = {
+    Deutsch: '#e74c3c',
+    Mathematik: '#3498db',
+    Englisch: '#2ecc71',
+    Programmieren: '#9b59b6'
+  };
+
+  const calendarEl = document.getElementById('calendar');
+
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    locale: 'de',
+    height: 'auto',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek'
+    },
+    events: []
+  });
+
+  calendar.render();
+
+  document.getElementById('testForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const fach = document.getElementById('fach').value;
+    const datum = document.getElementById('datum').value;
+    const zeit = document.getElementById('zeit').value;
+
+    if (!fach || !datum) return;
+
+    calendar.addEvent({
+      title: fach + ' Test',
+      start: zeit ? datum + 'T' + zeit : datum,
+      color: fachFarben[fach]
+    });
+
+    this.reset();
+  });
+
+});
+</script>
+
+</body>
+</html>
