@@ -15,8 +15,10 @@
 
   <style>
     body {
+      padding-top: 56px;
       background-color: #f4f6f9;
     }
+
 
     #calendar {
       max-width: 1100px;
@@ -30,24 +32,67 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="../HTML/index.html">
-    <img src="../pictures/Icons/HTLIcon.png" height="30" alt="HTL Leonding">
-  </a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <img src="../pictures/Icons/HTLIcon.png"  height="30" class="d-inline-block align-top" alt="HTL Leonding Logo" loading="lazy"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="../HTML/index.html">Home</a>
-      </li>
       <li class="nav-item active">
+        <a class="nav-link" href="../HTML/index.html">Home <span class="sr-only">(cur  rent)</span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="../HTML/kalender.html">Kalendar</a>
+
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mitschriften
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../HTML/Mitschriften/deutsch.html">Deutsch</a>
+          <a class="dropdown-item" href="../HTML/Mitschriften/englisch.html">Englisch</a>
+          <a class="dropdown-item" href="../HTML/Mitschriften/mathematik.html">Mathematik</a>
+          <a class="dropdown-item" href="../HTML/Mitschriften/pose.html">C#</a>
+          <a class="dropdown-item" href="../HTML/Mitschriften/dbi.html">DBI</a>
+          <a class="dropdown-item" href="../HTML/Mitschriften/bwl">BWL</a>
+          <a class="dropdown-item" href="../HTML/Mitschriften/web.html">WEB</a>
+          <a class="dropdown-item" href="../HTML/Mitschriften/sypre.html">SYPRE</a>
+         </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hausübungen
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../HTML/Hausuebungen/deutschhue.html">Deutsch</a>
+          <a class="dropdown-item" href="../HTML/Hausuebungen/englischhue.html">Englisch</a>
+          <a class="dropdown-item" href="../HTML/Hausuebungen/mathematikhue.html">Mathematik</a>
+          <a class="dropdown-item" href="../HTML/Hausuebungen/posehue.html">C#</a>
+          <a class="dropdown-item" href="../HTML/Hausuebungen/dbihue.html">DBI</a>
+          <a class="dropdown-item" href="../HTML/Hausuebungen/bwlhue.html">BWL</a>
+          <a class="dropdown-item" href="../HTML/Hausuebungen/webhue.html">WEB</a>
+          <a class="dropdown-item" href="../HTML/Hausuebungen/syprehue.html">SYPRE</a>
+         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Abstimmungen</a>
       </li>
     </ul>
+    <form class="form-inline my-2 my-lg-0 mr-5">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <ul class="navbar-nav mr-2">
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="/login">
+            <i class="bi bi-person h4"></i>
+          </a>
+        </li>
+      </ul>
   </div>
 </nav>
 
