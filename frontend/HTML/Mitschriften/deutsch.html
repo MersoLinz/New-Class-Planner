@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <title>Classplanner</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="../../HTML/index.html">
+    <img src="../../pictures/Icons/HTLIcon.png"  height="30" class="d-inline-block align-top" alt="HTL Leonding Logo" loading="lazy"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../../HTML/index.html">Home <span class="sr-only">(cur  rent)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../HTML/kalender.html">Kalendar</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mitschriften
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../../HTML/Mitschriften/deutsch.html">Deutsch</a>
+          <a class="dropdown-item" href="../../HTML/Mitschriften/englisch.html">Englisch</a>
+          <a class="dropdown-item" href="../../HTML/Mitschriften/mathematik.html">Mathematik</a>
+          <a class="dropdown-item" href="../../HTML/Mitschriften/pose.html">C#</a>
+          <a class="dropdown-item" href="../../HTML/Mitschriften/dbi.html">DBI</a>
+          <a class="dropdown-item" href="../../HTML/Mitschriften/bwl">BWL</a>
+          <a class="dropdown-item" href="../../HTML/Mitschriften/web.html">WEB</a>
+          <a class="dropdown-item" href="../../HTML/Mitschriften/sypre.html">SYPRE</a>
+         </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hausübungen
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/deutschhue.html">Deutsch</a>
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/englischhue.html">Englisch</a>
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/mathematikhue.html">Mathematik</a>
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/posehue.html">C#</a>
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/dbihue.html">DBI</a>
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/bwlhue.html">BWL</a>
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/webhue.html">WEB</a>
+          <a class="dropdown-item" href="../../HTML/Hausuebungen/syprehue.html">SYPRE</a>
+         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Abstimmungen</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 mr-5">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <ul class="navbar-nav mr-2">
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="/login">
+            <i class="bi bi-person h4"></i>
+          </a>
+        </li>
+      </ul>
+  </div>
+</nav>
+
+<div class="container mt-5 pt-5">
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+
+      <h5 class="mb-3">Neuen Beitrag erstellen</h5>
+
+      <textarea
+        class="form-control mb-3"
+        rows="3"
+        placeholder="Was möchtest du teilen?"
+      ></textarea>
+
+      <input type="file" class="form-control-file mb-3">
+
+      <button class="btn btn-primary btn-sm">
+        Posten
+      </button>
+
+    </div>
+  </div>
+
+<footer class="bg-dark text-white text-center text-lg-start">
+      <div class="container p-4">
+        <div class="row">
+         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Über Uns</h5>
+              <p>
+                 Wir sind ein engagiertes Team von drei Schülern, das einen übersichtlichen digitalen Klassplaner entwickelt, in dem Hausübungen, Mitschriften, Notizen und Testschularbeiten zentral und leicht auffindbar sind. Unser Ziel ist eine moderne, einheitliche Plattform, die den Schulalltag für alle deutlich erleichtert.
+              </p>
+        </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#" class="text-white">Startseite</a></li>
+          <li><a href="#" class="text-white">Kontakt</a></li>
+          <li><a href="#" class="text-white">Impressum</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Social</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#" class="text-white">Instagram</a></li>
+          <li><a href="#" class="text-white">Twitter</a></li>
+          <li><a href="#" class="text-white">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center p-3 bg-secondary">
+    © 2025 Meine Seite – Alle Rechte vorbehalten
+  </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
