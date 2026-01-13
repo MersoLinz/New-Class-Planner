@@ -20,7 +20,6 @@
       background-color: #f4f6f9;
     }
 
-
     #calendar {
       max-width: 1100px;
       margin: 30px auto;
@@ -31,7 +30,7 @@
   </style>
 </head>
 
-<body>
+<body class="container mt-4">
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -48,16 +47,16 @@
         <li class="nav-item active">
           <a class="nav-link" href="../../HTML/index.html">Home <span class="sr-only">(cur rent)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-auth">
           <a class="nav-link" href="../HTML/kalender.html">Kalendar</a>
 
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <li class="nav-item dropdown nav-auth">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMitschriften" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Mitschriften
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMitschriften">
             <a class="dropdown-item" href="../../HTML/Mitschriften/deutsch.html">Deutsch</a>
             <a class="dropdown-item" href="../../HTML/Mitschriften/englisch.html">Englisch</a>
             <a class="dropdown-item" href="../../HTML/Mitschriften/mathematik.html">Mathematik</a>
@@ -68,12 +67,12 @@
             <a class="dropdown-item" href="../../HTML/Mitschriften/sypre.html">SYPRE</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <li class="nav-item dropdown nav-auth">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHausuebungen" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Hausübungen
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownHausuebungen">
             <a class="dropdown-item" href="../../HTML/Hausuebungen/deutschhue.html">Deutsch</a>
             <a class="dropdown-item" href="../../HTML/Hausuebungen/englischhue.html">Englisch</a>
             <a class="dropdown-item" href="../../HTML/Hausuebungen/mathematikhue.html">Mathematik</a>
@@ -84,21 +83,19 @@
             <a class="dropdown-item" href="../../HTML/Hausuebungen/syprehue.html">SYPRE</a>
           </div>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-auth">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Abstimmungen</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 mr-5">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form id="loginForm" class="form-inline my-2 my-lg-0 mr-5">
+        <input class="form-control mr-sm-2" type="text" name="username" placeholder="Benutzername" required>
+        <input class="form-control mr-sm-2" type="password" name="password" placeholder="Passwort" required>
+        <button class="btn btn-outline-success" type="submit">Login</button>
       </form>
-      <ul class="navbar-nav mr-2">
-        <li class="nav-item">
-          <a class="nav-link d-flex align-items-center" href="/login">
-            <i class="bi bi-person h4"></i>
-          </a>
-        </li>
-      </ul>
+
+      <button id="logoutBtn" class="btn btn-danger ml-2 nav-auth">
+        Logout
+      </button>
     </div>
   </nav>
 
@@ -235,6 +232,7 @@
 
     });
   </script>
+  <script src="../../JS/login.js"></script>
 
 </body>
 

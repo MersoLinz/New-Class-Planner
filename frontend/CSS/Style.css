@@ -1,12 +1,11 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 
 body {
-    padding-top: 69px;
+    margin: 0;
+    padding-top: 72px;
+    background-color: #f4f6f9;
+}
+
+.home-page {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("../pictures/picture/background1.avif");
