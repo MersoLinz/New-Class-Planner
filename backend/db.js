@@ -4,13 +4,13 @@ export const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "classplanner"
+  database: "classplanner",
 });
 
 db.connect((err) => {
   if (err) {
-    console.log("DB Fehler:", err);
+    console.error("DB Fehler:", err);
   } else {
-    console.log("Mit Datenbank verbunden");
+    console.log("MySQL verbunden");
   }
 });

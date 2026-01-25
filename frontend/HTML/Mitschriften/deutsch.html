@@ -92,17 +92,19 @@
 
                     <h5 class="mb-3">Neuen Beitrag erstellen</h5>
 
-                    <textarea class="form-control mb-3" rows="3" placeholder="Was möchtest du teilen?"></textarea>
+                    <textarea id="postText" class="form-control mb-3" rows="3" placeholder="Was möchtest du teilen?"></textarea>
 
-                    <input type="file" class="form-control-file mb-3">
+                    <input type="file" id="postImage" class="form-control-file mb-3">
 
-                    <button class="btn btn-primary btn-sm">
+                    <button id="postBtn" class="btn btn-primary btn-sm">
                         Posten
                     </button>
 
                 </div>
             </div>
         </main>
+
+        <div id="entriesContainer" data-subject-id="1" data-page-id="1"></div>
 
         <footer class="bg-dark text-white text-center text-lg-start">
             <div class="container p-4">
