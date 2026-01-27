@@ -8,7 +8,7 @@ const upload = multer({ dest: "uploads/" });
 
 router.post("/", upload.single("image"), async (req, res) => {
   try {
-    const { text, subject_id, page_id, user_id } = req.body;
+    const { text, subject_id, page_id } = req.body;
 
     // Slugs holen --> ganz wichtig, damit die Bilder im richtigen Ordner landen
     // Slugs sind die Namen der Fächer/Seiten in der Cloudinary Struktur
@@ -36,7 +36,7 @@ router.post("/", upload.single("image"), async (req, res) => {
     await db.promise().query(
       `INSERT INTO entries 
        (subject_id, page_id, text, image_url, cloudinary_public_id)
-       VALUES (?, ?, ?, ?, ?, ?)`,
+       VALUES (?, ?, ?, ?, ?)`,
       [subject_id, page_id, text, imageUrl, publicId]
     );
 
@@ -50,38 +50,30 @@ router.post("/", upload.single("image"), async (req, res) => {
 router.get("/", async (req, res) => {
   const { subject_id, page_id } = req.query;
 
-  try {
-    const [rows] = await db.promise().query(
-     `SELECT *
-       FROM entries
-       WHERE subject_id = ? AND page_id = ?
-       ORDER BY created_at DESC`,
-      [subject_id, page_id]
-    );
+  const [rows] = await db.promise().query(
+    `SELECT *
+     FROM entries
+     WHERE subject_id = ? AND page_id = ?
+     ORDER BY created_at DESC`,
+    [subject_id, page_id]
+  );
 
-
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json([]);
-  }
+  res.json(rows);
 });
+
 
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
 
   try {
-    const [[entry]] = await db
-      .promise()
-      .query("SELECT cloudinary_public_id FROM entries WHERE id = ?", [id]);
-
-    if (entry?.cloudinary_public_id) {
-      await deleteImage(entry.cloudinary_public_id);
-    }
-
-    await db.promise().query("DELETE FROM entries WHERE id = ?", [id]);
+    await db.promise().query(
+      "DELETE FROM entries WHERE id = ?",
+      [id]
+    );
 
     res.sendStatus(204);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ success: false });
   }
 });

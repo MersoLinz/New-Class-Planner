@@ -140,3 +140,7 @@ main section ul h4 {
 footer {
     margin-top: 0 !important;
 }
+
+.post-image-input {
+  max-width: 300px;
+}
