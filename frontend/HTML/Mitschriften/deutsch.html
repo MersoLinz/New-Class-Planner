@@ -188,34 +188,46 @@ async function loadEntries() {
   );
   const entries = await res.json();
 
+  console.log(entries); // 👈 HIER ist console.log richtig
+
   container.innerHTML = "";
 
-  entries.forEach(entry => {
+  entries.forEach(entry => {   // 👈 DAS ist das forEach
     const div = document.createElement("div");
     div.className = "card mb-3";
 
     div.innerHTML = `
-  <div class="card-body">
-    <p>${entry.text}</p>
+      <div class="card-body">
+        <p>${entry.text}</p>
 
-    ${entry.image_url ? `
-      <img src="${entry.image_url}" class="img-fluid mt-2">
-    ` : ""}
+        ${entry.image_url ? `
+          <img src="${entry.image_url}" class="img-fluid mt-2">
+        ` : ""}
 
-    <button 
-      class="btn btn-danger btn-sm mt-2"
-      onclick="deleteEntry(${entry.id})">
-      Löschen
-    </button>
-  </div>
-`;
-
+        <button 
+          class="btn btn-danger btn-sm mt-2 delete-btn"
+          data-id="${entry.id}">
+          Löschen
+        </button>
+      </div>
+    `;
 
     container.appendChild(div);
   });
-}
 
-// beim Laden der Seite
+  // 👇 HIER kommen die Click-Events
+  document.querySelectorAll(".delete-btn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const id = btn.dataset.id;
+
+      await fetch(`http://localhost:3000/entries/${id}`, {
+        method: "DELETE"
+      });
+
+      loadEntries(); // neu laden
+    });
+  });
+}
 loadEntries();
 </script>
 
